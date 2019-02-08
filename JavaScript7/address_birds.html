@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>welcome</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1 align="center">Animal world!</h1>
+
+        <h2>Here some birds and animals are:</h2>
+
+            <ol type="1">
+
+                <li>King penguin</li>
+                <li>Emperor penguin</li>
+                <li>Wandering albatross</li>
+                <li>Arctic Tern</li>
+                <li>Rockhopper Penguin</li>
+                <li>Narwhal</li>
+                <li>Weddell seal</li>
+
+            </ol>
+
+    <h3>click here to seperate birds from animals:</h3>
+    <button onclick="seperate()">seperate</button>
+
+    <p id="birdsList"></p>
+
+
+    <hr>
+
+    <h1 align="center">Addresses</h1>
+
+    Address:<input type="text" id="address_input"><button onclick="addPost()">post</button>
+    <p id="displayAddress" style="color: red;"></p>
+
+    <script type="text/javascript">
+        function seperate(){
+
+            var animals = " King penguin \n Emperor penguin \n Wandering albatross \n Arctic Tern \n Rockhopper Penguin \n Narwhal \n Weddell seal";
+            
+            var birds = /(King penguin|Emperor penguin|Wandering albatross|Rockhopper Penguin| Arctic Tern)/gi;
+
+            var result = animals.match(birds);
+
+            document.getElementById("birdsList").innerHTML = result ;
+        }
+
+        function addPost(){
+            var address = document.getElementById('address_input').value;
+
+            var addPattern = /(\d{1,})?([.]{1,})?([\w\s\,])+([\w]{6})/;
+
+            var test  = addPattern.test(address);
+
+            if(test == true){
+                alert("address successfully posted");
+                document.getElementById("displayAddress").innerHTML = "your address is:"+address;
+            }
+
+            else{
+
+                document.getElementById("displayAddress").innerHTML = "Error->Eg:1 Reindeer Lane, North Pole, AK 99705";
+            }
+        }
+    </script>
+</body>
+</html>

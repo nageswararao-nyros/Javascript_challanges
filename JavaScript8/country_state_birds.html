@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<style type="text/css">
+	  body{
+	    background-color:#85929E;
+	    color: white;
+	  }
+	  input{
+	    background-color:#BDC3C7;
+	  }</style>
+ </head>
+  <body>
+  
+    country Name:<input type="text" id="country_name"><br><br>
+
+    state Name:<input type="text" id="state_name"><br><br>
+
+    zipcode:<input type="text" id="zip_code"><br><br>
+
+    <p id="result"></p>
+
+    <input type="button" onclick="validateTotal()" value="submit">
+   
+    
+    <script>
+
+    
+
+    
+  			
+  			function validate(userInput, regex){
+
+  				 
+  				this.userInput = userInput;
+  				this.regex = regex;
+
+  				var test = regex.test(userInput);
+
+         
+
+
+  				if(test==true){
+  					alert("success");
+  					
+  		}else
+  		alert("check it once!!!!");
+  	}
+
+    function validateTotal(){
+
+  			function countryValidation(){
+  				var userInput = document.getElementById("country_name").value;
+  				var regex = /^[\w]+$/;
+  				var test = new validate(userInput,regex);
+  				
+  			}
+        countryValidation();
+
+  			function stateValidation(){
+  				var userInput = document.getElementById("state_name").value;
+  				var regex = /^([A-Z]{1})[\.]{1}([A-Z]{1})$/;
+  				var test = new validate(userInput,regex);
+  				
+  			}
+       stateValidation();
+
+  			function zipcodeValidation(){
+  				var userInput = document.getElementById("zip_code").value;
+  				var regex = /^[\d]{6}$/;
+  				var test = new validate(userInput,regex);
+  				
+  			}
+        zipcodeValidation();
+
+        function birdsSeperate(){
+
+          var creatures="King penguin \n Emperor penguin \n Wandering albatross \n Arctic Tern \n Rockhopper Penguin \n Narwhal \n Weddell seal";
+
+          var birds=/(King penguin|Emperor penguin|Wandering albatross|Arctic Tern|Rockhopper penguin)/ig;
+
+          var birdsvalidate=creatures.match(birds);
+
+          document.getElementById("result").innerHTML = birdsvalidate;
+
+        }birdsSeperate();
+
+    }
+
+	</script>
+
+</body>
+
+</html>
+

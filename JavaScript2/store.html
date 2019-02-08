@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>store</title>
+	<style type="text/css">
+		input[type=text]{
+			background-color: #61dafb;
+			width: 500px;
+			height:30px;
+		}
+		input[type=button]{
+			background-color: #61dafb;
+			width: 100px;
+			height:35px;
+		}
+		#demo{
+			color: black;
+			font-size: 25px;
+		}
+
+		
+	</style>
+</head>
+<body>
+<table>
+<tr><td><input type="text" id="data"></td><td><input type="button" value="Add" onclick="cou()"></td></tr>
+</table>
+<p id="demo"></p>
+<script type="text/javascript">
+	function cou(){
+		var dat=document.getElementById('data').value;
+		document.getElementById('demo').innerHTML +=  dat+"<br>";
+		if(dat==''){
+			alert("enter some data");
+			document.getElementById('demo').innerHTML='';
+		}
+	}
+</script>
+</body>
+</html>

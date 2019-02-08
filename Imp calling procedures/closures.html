@@ -1,0 +1,171 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Boarding Pass</title>
+	<style type="text/css">
+	body{
+		padding: 0;
+		margin: 0; 
+	}
+		.formIn{
+			background-color: grey;
+			padding: 20px;
+
+		}
+		.formOut{
+			background-color: powderblue;
+			padding: 20px;
+			
+		}
+		select{
+			background-color: orange;
+			color: white;
+		}
+		td{
+			padding: 5px;
+		}
+		input{
+			height: 30px;
+			width: 200px;
+			text-indent: 20px;
+		}
+		input[type=submit]{
+			background-color: red;
+			margin-top: 15px;: 
+		}
+		#demo5{
+			font-size: 30px;
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	<div align="center" class="formIn">
+
+		<table border="2">
+	
+	
+			<tr>
+				<td>vehicle type:</td>
+				<td>
+					<select id="vehicle">
+						<option value="Bus">Bus</option>
+						<option value="Train">Train</option>
+						<option value="Flight">Flight</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Name of the Passenger:</td>
+				<td><input type="text" id="p_name" required></td>
+			</tr>
+
+			<tr>
+				<td>Age</td>
+				<td><input type="Number" id="p_age" max=100 required></td>
+			</tr>
+		</table>
+		
+		<input type="submit" value="book" onclick="bookNow()">
+	
+	</div>
+	
+
+
+	<div align="center" class="formOut">
+
+		<table border="3">
+			<tr>
+				<td>Vehicle type:</td>
+				<td id=demo></td>
+			</tr>
+			<tr>
+				<td>Name of The passenger</td>
+				<td id=demo1></td>
+			</tr>
+			<tr>
+				<td>Age</td>
+				<td id=demo2></td>
+			</tr>
+			<tr>
+				<td>TicketNumber</td>
+				<td id=demo3></td>
+			</tr>
+			<tr>
+				<td>TicketPrice</td>
+				<td id=demo4></td>
+			</tr>
+		</table>
+		<p id="demo5">
+	</div>
+	
+	<script type="text/javascript">
+
+		var busTkt ="400";
+		var trainTkt = "800";
+		var flightTkt = "5000";
+		var total = [];
+		var count = 0;
+
+		function bookNow(){
+	
+			var vehicle = document.getElementById('vehicle').value;
+			document.getElementById('demo').innerHTML = vehicle;
+			var Name = document.getElementById('p_name').value;
+			document.getElementById('demo1').innerHTML = Name;
+			var age = document.getElementById('p_age').value;
+			document.getElementById('demo2').innerHTML = age;
+			document.getElementById('demo3').innerHTML = Math.floor(Math.random()*10000);
+
+
+			function Ticket(){
+				
+				if(vehicle == "Bus") {
+					if (age >= 65) {
+						document.getElementById("demo4").innerHTML = "Rs."+ busTkt/2 +".00";
+						alert("You are eligible for Special Categeory ");
+					}
+					else{
+						document.getElementById("demo4").innerHTML = "Rs."+ busTkt +".00";
+					}
+				}
+
+				if (vehicle == "Train") {
+					if (age >= 65) {
+						document.getElementById("demo4").innerHTML = "Rs."+ trainTkt/2 +".00";
+						alert("You are eligible for Special Categeory ");
+					} else {
+						document.getElementById("demo4").innerHTML = "Rs."+ trainTkt +".00";
+					}
+				}
+				if (vehicle == "Flight") {
+					if (age >= 65) {
+						document.getElementById("demo4").innerHTML = "Rs."+ flightTkt/2 +".00";
+						alert("You are eligible for Special Categeory ");
+					} else {
+						document.getElementById("demo4").innerHTML = "Rs."+ flightTkt +".00";
+					}
+				}
+
+				   
+			}
+			Ticket();
+			function nameCal() {
+                if (total == Name) {
+                    count += 1;
+                } else {
+                    count = 1;
+                    total = Name;
+                }
+                document.getElementById('demo5').innerHTML = Name+" already booked"+" " +count +" "+"times";
+            }nameCal();
+		}
+		
+
+	
+			
+			
+		
+	</script>
+</body>
+</html>

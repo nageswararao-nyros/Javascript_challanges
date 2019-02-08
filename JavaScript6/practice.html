@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prototypes</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<p>Console result using constructors</p>
+<script type="text/javascript">
+
+function own(name, number, city, percentage){
+	this.name = name;
+	this.number = number;
+	this.city = city;
+	this.percentage = percentage;
+}
+
+var obj = new own();
+obj.name = 'sai';
+obj.number = 25;
+obj.city = 'kkd';
+obj.percentage = 65;
+
+var obj2 = new own();
+
+obj2.name = 'saisiva';
+obj2.number = 50;
+obj2.city = 'Rajahmundry';
+obj2.percentage = 70;
+
+own.prototype.toString = function fun() {
+  return this.name;
+}
+
+var x = new own(); 
+console.log(obj);
+console.log(obj2);
+console.log(own.prototype.hasOwnProperty(name));
+
+console.log(own.prototype.isPrototypeOf(obj2));
+console.log(obj.toString('sai'));
+
+
+
+</script>
+</body>
+</html>

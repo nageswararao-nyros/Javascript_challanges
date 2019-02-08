@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loop</title>
+
+	<style type="text/css">
+
+		table{
+			width: 100%;
+			border: solid;
+		}
+
+		.studentInc{
+			background-color: #99ccff;
+
+		}
+		.TrainsInfo{
+			margin: 10px 0 20px 0;
+			background-color: #ccccb3;
+		}
+		.studentDec{
+			background-color: #ffad99;
+		}
+		input{
+			width: 150px;
+			height: 40px;
+			background-color: #00cc99;	
+			border-radius: 5px;
+			outline: none;
+		}
+	</style>
+</head>
+<body bgcolor="#e6f3ff">
+	<h1>Loops concept</h1>
+	<input type="button" value="TrainsData" onclick="TrainsInfo()">
+	<input type="button" value="StudentsData" onclick="studentsInfo()">
+	<input type="button" value="StudentsData--" onclick="studentsInfodec()"><br><br>
+
+	<!-- First Table -->
+
+	<div class="studentInc">
+		<table border="3">
+			<th>Students</th>
+			<tr>
+				<td id="students"></td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Second Table -->
+
+	<div class="TrainsInfo">
+		<table border="3" cellpadding="5" cellspacing="5">
+			<th>Operational</th>
+			<th>Non Operational</th>
+			<tr>
+				<td id="Operational"></td>
+				<td id="NonOperational"></td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Third table -->
+
+	<div class="studentDec">
+		<table border="3">
+			<th>Students Descending Order</th>
+			<tr>
+				<td id="decst"></td>
+			</tr>
+		</table> 
+	</div>
+
+	<h4>1-5 Ascending order</h4>
+	<input type="button" onclick="asc()" value="Ascending">
+	<p id="ascValues"></p>
+	<input type="button" onclick="Dsc()" value="Descending">
+	<p id="dscValues"></p>
+	<!-- JavaScript -->
+
+	<script type="text/javascript">
+		function studentsInfo(){
+			var i;
+			var student="";
+			for(i=1;i<=45;i++){
+				student += "student"+i+","+"\n";
+			}
+			document.getElementById('students').innerHTML=student;
+		}
+
+		function TrainsInfo(){
+			var x;
+			var operational="";
+			var nonope="";
+			for(x=1;x<=8;x++){
+				operational +=" Operational train"+x+"<br>"
+			}
+			document.getElementById("Operational").innerHTML=operational;
+
+			if(x=8)
+			{
+				for(x=9;x<=15;x++){
+					nonope += "Non Operational Train"+x+","+"<br>"
+				}
+				document.getElementById("NonOperational").innerHTML=nonope;
+			}
+
+		}
+		function studentsInfodec(){
+			var y;
+			var dec="";
+			for(y=45;y>=1;y--){
+				dec +="student"+y+","+"\t";
+			}
+			document.getElementById("decst").innerHTML=dec;
+		}
+
+		function asc(){
+			var i;
+			var Ascending="";
+			for(i=1; i<=5; i++){
+				Ascending += i+"<br>";
+			}
+			document.getElementById("ascValues").innerHTML=Ascending;
+		}
+
+		function Dsc(){
+			var i;
+			var Descending="";
+			for(i=5; i>=1; i--){
+				Descending += i+"<br>";
+			}
+			document.getElementById("dscValues").innerHTML=Descending;
+		}
+
+	</script>
+</body>
+</html>

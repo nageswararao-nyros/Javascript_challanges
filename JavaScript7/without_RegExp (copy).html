@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Regular Expressions</title>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+			/*width: auto;*/
+		}
+		.sub{
+			background-color: #e8ebef;
+
+			/*margin-left: 300px;
+			margin-right: 300px;*/
+			height: 630px;
+			padding: 10px;
+		}
+		input{
+			/*width: 400px;*/
+			height: 30px;
+			margin: 10px;
+			border-radius: 10px;
+			text-indent: 10px;
+			outline: none;
+			border: none;
+		}
+
+		input[type=number]{
+			width: 
+		}
+		input:focus{
+			border: 1px solid blue;
+		}
+		button{
+			background-color: #61dafb;
+			color: black;
+			height: 40px;
+			border-radius: 25px;
+			border:none;
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="sub" align="center">
+			<h1>Hello</h1>
+			<h3>Welcome to SubWay!</h3>
+			<marquee bgcolor = "#61dafb" style="color: white; padding: 5px;">We have a new offers and New dealings!</marquee>
+			<br> <br> 
+		<div>
+				
+				<form id="form" onsubmit="return false">
+					<input type="text" id="name" placeholder="Name"><br>
+					<input type="Email" id="mail" placeholder="Email"><br>
+					<input type="text" id="number" placeholder="eg:91-884-234-2424" maxlength="15"><br>
+					<label id="errorMsg" style="color: red"></label><br>
+					<button type="submit" onclick="dataValid()">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		class valid{
+
+			constructor(name, email, number){
+				this.name = name;
+				this.email = email;
+				this.number = number;
+			}
+
+
+		}
+
+		function dataValid(){
+			var names = document.getElementById('name').value;
+			var emails = document.getElementById('mail').value;
+			var numbers = document.getElementById('number').value;
+
+		
+			
+			if(numbers.charAt(0) == "9" && numbers.charAt(1) == "1" && numbers.charAt(2) == "-" && numbers.charAt(6) == "-" && numbers.charAt(10) == "-" && isNaN(numbers.charAt(3)) == false && isNaN(numbers.charAt(4)) == false && isNaN(numbers.charAt(5)) == false && isNaN(numbers.charAt(7)) == false && isNaN(numbers.charAt(8)) == false && isNaN(numbers.charAt(9)) == false && isNaN(numbers.charAt(11)) == false && isNaN(numbers.charAt(12)) == false && isNaN(numbers.charAt(13)) == false && isNaN(numbers.charAt(14)) == false ){
+
+				var validate = new valid(names, emails, numbers);
+				console.log(validate);
+				alert("success");
+				
+
+			}else{
+				alert("Please enter data correctly!");
+				document.getElementById("errorMsg").innerHTML = "Eg:91-884-234-2424";
+
+			
+		}
+			
+		}
+	</script>
+</body>
+</html>
+

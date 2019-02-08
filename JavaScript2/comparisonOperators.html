@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comparison</title>
+</head>
+<body>
+	<h1>Comparison</h1>
+		<h2>Comparison with Two elements</h2>
+		Number1:<input type="number" id="one" size=50><br><br>
+		Number2:<input type="number" id="two" size=50><br><br>
+		<input type="button" value="compare" onclick="compare()">
+		<input id="disp" size=50>
+	<hr>
+
+	<h2>Equal or Not equal</h2>
+		Number1:<input type="number" id="first" size=50><br><br>
+		Number2:<input type="number" id="second" size=50><br><br>
+		<input type="button" value="compare" onclick="comparing()">
+
+		<hr>
+
+	<script type="text/javascript">
+		function compare(){
+			var x=Number(document.getElementById('one').value);
+			var y=Number(document.getElementById('two').value);
+			if(x>y){
+				document.getElementById("disp").value="Number1 is Greater than Number2";
+			} else if(x==y){
+				document.getElementById("disp").value="Both numbers are Equal";
+			} else{
+				document.getElementById("disp").value="Number2 is Greater than Number1";
+			}
+		}
+
+		function comparing(){
+			var p =Number(document.getElementById("first").value);
+			var q =Number(document.getElementById("second").value);
+			if(p==q){
+				alert("Both values or Equal");
+			}else
+			alert("Not Equal");
+
+		}
+	</script>
+</body>
+</html>

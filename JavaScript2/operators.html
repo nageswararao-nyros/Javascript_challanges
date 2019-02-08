@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+</head>
+<body bgcolor="grey">
+<div class="main">
+	<div class="sub">
+		<h1 align="center">JavaScript</h1>
+		<h2>Addition</h2>
+		Number1:<input type="number" size="10" id="input1"><br><br>
+		Number2:<input type="number" size="10" id="input2"><br><br>
+		<input type="submit" value="Add" onclick="Addition()"><br><br>
+		The total value is:<input id="add">
+		<hr>
+		<!-- Subtraction -->
+		<h2>Subtraction</h2>
+		Number1:<input type="number" size="10" id="sub1"><br><br>
+		Number2:<input type="number" size="10" id="sub2"><br><br>
+		<input type="submit" value="Add" onclick="Subtraction()"><br><br>
+		The total value is:<input id="sub">
+		<hr>
+
+		<!-- Multiplication -->
+		<h2>Multiplication</h2>
+		Number1:<input type="number" size="10" id="mul1"><br><br>
+		Number2:<input type="number" size="10" id="mul2"><br><br>
+		<input type="submit" value="Add" onclick="Multiplication()"><br><br>
+		The total value is:<input id="mul">
+		<hr>
+
+		<!-- Division -->
+		<h2>Division</h2>
+		Number1:<input type="number" size="10" id="div1"><br><br>
+		Number2:<input type="number" size="10" id="div2"><br><br>
+		<input type="submit" value="Add" onclick="Division()"><br><br>
+		The total value is:<input id="div">
+		<hr>
+
+		<!-- Modulus -->
+
+		<h2>Modulus</h2>
+			Number1:<input type="number" size="10" id="mod1"><br><br>
+			Number2:<input type="number" size="10" id="mod2"><br><br>
+			<input type="submit" value="Add" onclick="Modulus()"><br><br>
+			The total value is:<input id="mod">
+		<hr>
+
+		<h2>PEMDAS</h2>
+			Number1:<input type="number" size="10" id="PEM1"><br><br>
+			Number2:<input type="number" size="10" id="PEM2"><br><br>
+			<input type="submit" value="Add" onclick="PEMDAS()"><br><br>
+			x+y+(x*y)-x/y=<input id="PEM">
+		<hr>
+	</div>	
+</div>
+<script type="text/javascript">
+	function Addition(){
+		var x = Number(document.getElementById('input1').value);
+		var y = Number(document.getElementById('input2').value);
+		var z= x + y;
+		document.getElementById("add").value = z;
+		if(x==""||y==""){
+			alert("Fill data correctly");
+			document.getElementById("add").value = "";
+		}
+		
+	}
+	// subtractions
+
+	function Subtraction(){
+		var x = Number(document.getElementById('sub1').value);
+		var y = Number(document.getElementById('sub2').value);
+		var z= x - y;
+		document.getElementById("sub").value = z;
+		if(x==""|| y==""){
+			alert("Fill data correctly");
+			document.getElementById("sub").value = "";
+		}
+		
+	}
+	// Multiplication
+
+	function Multiplication(){
+		var x = Number(document.getElementById('mul1').value);
+		var y = Number(document.getElementById('mul2').value);
+		var z= x * y;
+		document.getElementById("mul").value = z;
+		if(x==""|| y==""){
+			alert("Fill data correctly");
+			document.getElementById("mul").value = "";
+		}
+		
+	}
+
+	// Division
+
+	function Division(){
+		var x = Number(document.getElementById('div1').value);
+		var y = Number(document.getElementById('div2').value);
+		var z= x / y;
+		document.getElementById("div").value = z;
+		if(x==""|| y==""){
+			alert("Fill data correctly");
+			document.getElementById("div").value = "";
+		}
+		
+	}
+
+	// Modulus
+
+	function Modulus(){
+		var x = Number(document.getElementById('mod1').value);
+		var y = Number(document.getElementById('mod2').value);
+		var z= x % y;
+		document.getElementById("mod").value = z;
+		if(x==""|| y==""){
+			alert("Fill data correctly");
+			document.getElementById("mod").value = "";
+		}
+		
+	}
+
+	// Modulus
+
+	function PEMDAS(){
+		var x = Number(document.getElementById('PEM1').value);
+		var y = Number(document.getElementById('PEM2').value);
+		var z= x + y + ( x * y )- x / y;
+		document.getElementById("PEM").value = z;
+		if(x==""|| y==""){
+			alert("Fill data correctly");
+			document.getElementById("PEM").value = "";
+		}
+		
+	}
+
+
+</script>
+</body>
+</html>

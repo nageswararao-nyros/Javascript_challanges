@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>loop input</title>
+	<style type="text/css">
+		input{
+			width: 150px;
+			height: 40px;
+			background-color: #00cc99;	
+			border-radius: 5px;
+			outline: none;
+		}
+		input[type=Number]{
+			background-color: #e1e4ea;
+			color: black;
+			height: 35px;
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+Enter Value:<input type="Number" id="stdata">
+<input type="button" value="print" onclick="printst()">
+<p id="demo"></p>
+<script type="text/javascript">
+	function printst(){
+		var x=document.getElementById('stdata').value;
+		var i;
+		var temp="";
+		for(i=1;i<=x;i++){
+			temp += "Student"+i+"<br>";
+		}
+		document.getElementById("demo").innerHTML = temp;
+	}
+</script>
+</body>
+</html>

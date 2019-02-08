@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>countAll()</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		div{
+			padding: 10px;
+			margin: 30px;
+			font-size: 20px;
+		}
+
+		div:nth-child(even) {background-color: #61dafb;}
+		button{
+			border-color: grey;
+			padding: 10px;
+			margin: 10px;
+			border:none;
+		}
+		button:hover{
+			background-color: green;
+			color: white;
+		}
+
+	</style>
+</head>
+<p id="demo"></p>
+<body>
+<div>
+<p>In "I’ll get you, my pretty...and your little dog, too!" <br>
+In above string  number of "l" is:</p>
+<p id="countL"></p></div>
+<hr>
+
+<div>
+<p>"Well, some people without brains do an awful lot of talking don’t they?" <br>
+In above string  number of "o" is:</p>
+<p id="counts"></p></div>
+<hr>
+<div>
+<p>"Come on, get up and fight, you shivering junkyard!" <br>
+In above string  number of "k" is:</p>
+<p id="countK"></p></div>
+<hr>
+<div align="center">
+<button onclick="myfun()">count</button></div>
+	<script type="text/javascript">
+
+		var witch = "I’ll get you, my pretty...and your little dog, too!";
+		var scarecrow = "Well, some people without brains do an awful lot of talking don’t they?";
+		var dorothy = "There’s no place like home.";
+		var glinda = "Be gone! Before someone drops a house on you!";
+		var lion = "Come on, get up and fight, you shivering junkyard!";
+		var wizard = "Do not arouse the wrath of the great and powerful Oz!";
+		var tinman = "Now I know I have a heart, because it’s breaking.";
+
+
+		function myfun(){
+			String.prototype.countAll = function ( letter ){
+				var letterCount = 0;
+				for (var i = 0; i<this.length; i++) {
+					if ( this.charAt(i).toUpperCase() == letter.toUpperCase()) {        
+						letterCount++;    
+					}
+				}
+				return letterCount;    
+			};
+
+			document.getElementById('countL').innerHTML = witch.countAll('l');
+			document.getElementById('counts').innerHTML = scarecrow.countAll('o');
+			document.getElementById('countK').innerHTML = scarecrow.countAll('k');
+			
+			console.log("The count of 'l' in witch is:"+witch.countAll('l'));
+			console.log("The count of 'o' in scarecrow is:"+scarecrow.countAll('o'));
+			console.log("The count of 'l' in dorothy is:"+dorothy.countAll('l'));
+			console.log( "The count of 'l' in glinda is:" +glinda.countAll('l'));
+			console.log("The count of 'l' in lion is:" +lion.countAll('l'));
+			console.log("The count of 'l' in wizard is:" +wizard.countAll('l'));
+			console.log("The count of 'l' in tinman is:"+ tinman.countAll('l'));
+
+		}
+
+
+	</script>
+</body>
+</html>

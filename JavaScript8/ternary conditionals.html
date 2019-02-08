@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Ternary conditionals</title>
+	<style type="text/css">
+		#result, label{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+
+	<h1>Ternary Conditionals</h1>
+
+	<button onclick="checkTernary()">click</button>
+
+	<div id="result"></div>
+	<p id="priceOfmetal"></p>
+
+	<hr>
+
+	<h1>InstanceOf</h1>
+
+	<button onclick="checkInstance()">click</button>
+
+	<p id="instanceResult"></p>
+
+	<hr>
+
+	<h1>Exception Handling</h1>
+
+	<h3>
+		<ol type="1">
+			<li>Syntax Errors</li>
+			<li>Runtime Errors</li>
+			<li>Logical Errors</li>
+			<li>TypeError</li>
+		</ol>
+	</h3>
+
+	<h4>Example:</h4>
+	<table>
+		<tr>
+			<td>First name :</td>
+			<td><input type="text" id="firstname_input"></td>
+		</tr>
+
+		<tr>
+			<td>Last name :</td>
+			<td><input type="text" id="lastname_input"></td>
+		</tr>
+
+		<tr>
+			<td>Phone number :</td>
+			<td><input type="text" id="phonenumber_input"></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><label id="phoneError"></label></td>
+		</tr>
+
+		<tr>
+			<td>Email id:</td>
+			<td><input type="text" id="email_input"></td>
+		</tr>
+
+		<tr>
+			<td>Zip code :</td>
+			<td><input type="text" id ="zipcode_input"></td>
+		</tr>
+
+		<tr>
+			<td colspan="2"><label id="zipError"></label></td>
+		</tr>
+
+		<tr>
+			<td colspan="2" align="center"><input type="button" value="submit" onclick="dataValidate()"></td>
+		</tr>
+	</table>
+	
+	<p id="result"></p>
+
+	<script type="text/javascript">
+
+	console.time("Time taken");
+
+	var treasureChest  = {
+
+			goldCoins: "10,000",
+
+			magicalItem: "Crown of Speed",
+
+			necklaces:["sapphire", "ruby", "pearl","diamond"],
+
+			openLid: function () {
+
+			    alert("Creeeeak!");
+
+                }
+		}
+
+		function checkTernary(){
+
+			console.log(treasureChest);
+
+			console.log(Object.getPrototypeOf(treasureChest.necklaces));
+
+			console.log(Object.getOwnPropertyNames(treasureChest.necklaces));
+
+			console.log("The length of the Array is:"+treasureChest.necklaces.length);
+
+			for(var i in treasureChest.necklaces){
+
+					document.getElementById("result").innerHTML += "<p>"+"Item"+i+":"+" "+treasureChest.necklaces[i]+"</p>";
+
+					var checkName = ((treasureChest.necklaces[i]) == "diamond") ? "Very high cost" : "lowcost";
+
+					document.getElementById("priceOfmetal").innerHTML = "Diamond necklaces is:" + checkName ;
+				}
+
+
+		}
+
+
+		function checkInstance(){
+
+			function vehicles(vehicleName, wheels, seats, mailage){
+
+					this.vehicleName = vehicleName;
+					this.wheels = wheels;
+					this.seats = seats;
+					this.mailage = mailage;
+
+				
+			}
+
+			var car = new vehicles("Benz", 4, 4 , "10kmpl");
+			var lorry = new vehicles("TATA", 6, 3, "15kmpl");
+			var bike  = new vehicles("Yamaha", 2, 2, "45kmpl");
+
+			console.log(lorry);
+
+			var checkResult = lorry instanceof vehicles;
+
+			var resultDisplay = (checkResult) ? true : false;
+
+			document.getElementById("instanceResult").innerHTML = "Lorry is instance of vehicles? "  +"<b>"+ resultDisplay +"</b>";
+
+
+		}		
+
+
+		function dataValidate(){
+
+			
+            var firstName = document.getElementById('firstname_input').value;
+            var lastName = document.getElementById('lastname_input').value;
+            var phoneNumber = document.getElementById('phonenumber_input').value;
+            var email = document.getElementById('email_input').value;
+            var zipcode = document.getElementById('zipcode_input').value;
+
+            var phonePattern = /^([\d]{10})$/;
+
+            var zipcodePattern = /^([\d]{6})$/;
+
+            var phoneTest = phonePattern.test(phoneNumber);
+            var zipcodeTest = zipcodePattern.test(zipcode);
+               
+                try{
+
+                  	if ( firstName == '' || lastName == '' || phoneNumber == '' || email == '' || zipcode =='' )
+                    throw( "All fields required." ); 
+                  	}
+
+	                catch ( e ) {
+
+	                alert("Error: " + e);
+
+	                return false;
+
+	              	}
+	                  
+	                try{
+
+                 	if(phoneTest == false || zipcodeTest == false) throw "Syntax error"
+
+                 		else{
+
+                 			//alert("success");
+
+	                 		document.getElementById("phoneError").innerHTML = "";
+
+	                 		document.getElementById("zipError").innerHTML = "";
+
+                 		} 
+                 	}
+              	
+	                catch ( error ) {
+
+	                alert("Error: " + error);
+
+	                }
+	                 try{
+
+	                 	if(phoneTest == false) throw "Eg:9999999999"
+
+	                 }
+	                  	
+	                catch(zipError){
+
+	              		document.getElementById("phoneError").innerHTML = "phone number Error" +" "+ zipError;
+
+	              	}
+
+	                try{
+
+	                	if(zipcodeTest == false) throw "Eg:533001"
+
+	                }
+
+	        		catch(errorMessage){
+
+              		 	document.getElementById("zipError").innerHTML = "Zip code Error" +"  " + errorMessage;
+
+              		 }
+
+          
+	       }
+
+		console.timeEnd("Time taken");
+			
+			
+                
+	</script>	
+	
+</body>
+</html>

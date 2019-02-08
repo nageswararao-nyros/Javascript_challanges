@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Booking</title>
+	<link rel="stylesheet" type="text/css" href="Movies.css">
+</head>
+<body>
+	<h1 align="center"> Book Now</h1>
+	
+		<table>
+			<th>id</th>
+			<th>Movie Title</th>
+			<th>Poster</th>
+			<th>Duration</th>
+			<th>Timings</th>
+			<th>Book</th>
+
+			<tr>
+				<td>1</td>
+				<td>The Boss baby</td>
+				<td><img src="movie1.jpg" height="100" width="100"></td>
+				<td>02:08:00</td>
+				<td>
+					<select id="movie1">
+						<option value ="11:30 am">11:30 am</option>
+						<option value="02:30 pm">02:30 pm</option>
+						<option value="06:30 pm">06:30 pm</option>
+						<option value="09:30 pm">09:30 pm</option>
+					</select>
+				</td>
+				<td>
+					<input type="button" value="Booknow" onclick="Book1()">
+				</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>The Incredibles</td>
+				<td><img src="movie2.jpg" height="100" width="100"></td>
+				<td>02:30:25</td>
+				<td>
+					<select id="movie2">
+						<option value="11:30 am">11:30 am</option>
+						<option value="02:30 pm">02:30 pm</option>
+						<option value="06:30 pm">06:30 pm</option>
+						<option value="09:30 pm">09:30 pm</option>
+					</select>
+				</td>
+				<td>
+					<input type="button" value="Booknow" onclick="Book2()">
+				</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Robo</td>
+				<td><img src="movie3.jpg" height="100" width="100"></td>
+				<td>02:45:00</td>
+				<td>
+					<select id="movie3">
+						<option value="11:30 am">11:30 am</option>
+						<option value="02:30 pm">02:30 pm</option>
+						<option value="06:30 pm">06:30 pm</option>
+						<option value="09:30 pm">09:30 pm</option>
+					</select>
+				</td>
+				<td>
+					<input type="button" value="Booknow" onclick="Book3()">
+				</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>legend</td>
+				<td><img src="movie4.jpg" height="100" width="100"></td>
+				<td>02:17:25</td>
+				<td>
+					<select id="movie4">
+						<option value="1">11:30 am</option>
+						<option value="2">02:30 pm</option>
+						<option value="3">06:30 pm</option>
+						<option value="4">09:30 pm</option>
+					</select>
+				</td>
+				<td>
+					<input type="button" value="Booknow" onclick="Book4()">
+				</td>
+			</tr>
+		</table>
+		<br>
+		<br>
+		<div id="ticketprint">
+		<table  cellspacing="2" cellpadding="3" class="input" >
+			<tr>
+				<td><b>Movie name:</b></td>	
+				<td id="Mnameout" colspan="3"></td>
+			</tr>
+			<tr>
+				<td><b>Duration</b></td>
+				<td id="duration"></td>
+				<td><b>Genre</b></td>
+				<td id="genreeout"></td>
+			</tr>
+			<tr>
+				<td><b>Show time and date</b></td>
+				<td id="STAD" colspan="3"></td>
+			</tr>
+			<tr>
+				<td><b>Adults</b></td>
+				<td id="AdultOut"></td>
+				<td><b>childs</b></td>
+				<td id="childOut"></td>
+			</tr>
+			<tr>
+				<td><b>cerificate</b></td>
+				<td id="cerificateOut"></td>
+				<td><b>Total amount</b></td>
+				<td id="amount"></td>
+			</tr>
+		</table>
+
+		</div>
+		<div align="center">
+		<input type="button" value="Pay now" onclick="Ticket('ticketprint')"></div>
+			<script type="text/javascript">
+				var movieName=["The Boss baby","The Incredibles", "Robo", "legend"];
+
+				var movieDuration=["02:08:00", "02:30:25", "02:45:00", "02:17:25"]; 
+
+				var	AdultTicket="150";
+				var	childTicket="75";
+
+
+				function Book1(){
+					var Adults= prompt("Number of Adult persons");
+					var Childs= prompt("Number of Childrens");
+
+					var AdultPrice=AdultTicket*Adults;
+					var ChildPrice=childTicket*Childs;
+
+					var Total=AdultPrice+ChildPrice;
+					document.getElementById('amount').innerHTML="Rs."+Total+".00";
+
+						document.getElementById('Mnameout').innerHTML=movieName[0];
+						document.getElementById('duration').innerHTML=movieDuration[0];
+						document.getElementById('genreeout').innerHTML="Adventure";
+						document.getElementById('cerificateOut').innerHTML="U/A";
+						document.getElementById('AdultOut').innerHTML=Adults;
+						document.getElementById('childOut').innerHTML=Childs;
+						var x = document.getElementById("movie1").selectedIndex;
+    					document.getElementById('STAD').innerHTML= document.getElementsByTagName("option")[x].value+","+" "+Date();
+					}
+
+					function Book2(){
+					var Adults= prompt("Number of Adult persons");
+					var Childs= prompt("Number of Childrens");
+					var AdultPrice=AdultTicket*Adults;
+					var ChildPrice=childTicket*Childs;
+
+					var Total=AdultPrice+ChildPrice;
+					document.getElementById('amount').innerHTML="Rs."+Total+".00";
+
+						document.getElementById('Mnameout').innerHTML=movieName[1];
+						document.getElementById('duration').innerHTML=movieDuration[1];
+						document.getElementById('genreeout').innerHTML="Adventure";
+						document.getElementById('cerificateOut').innerHTML="U/A";
+						document.getElementById('AdultOut').innerHTML=Adults;
+						document.getElementById('childOut').innerHTML=Childs;
+						var x = document.getElementById("movie2").selectedIndex;
+    					document.getElementById('STAD').innerHTML= document.getElementsByTagName("option")[x].value+","+" "+Date();
+					}
+
+					function Book3(){
+					var Adults= prompt("Number of Adult persons");
+					var Childs= prompt("Number of Childrens");
+					var AdultPrice=AdultTicket*Adults;
+					var ChildPrice=childTicket*Childs;
+
+					var Total=AdultPrice+ChildPrice;
+					document.getElementById('amount').innerHTML="Rs."+Total+".00";
+
+						document.getElementById('Mnameout').innerHTML=movieName[2];
+						document.getElementById('duration').innerHTML=movieDuration[2];
+						document.getElementById('genreeout').innerHTML="Adventure";
+						document.getElementById('cerificateOut').innerHTML="U/A";
+						document.getElementById('AdultOut').innerHTML=Adults;
+						document.getElementById('childOut').innerHTML=Childs;
+						var x = document.getElementById("movie3").selectedIndex;
+    					document.getElementById('STAD').innerHTML= document.getElementsByTagName("option")[x].value+","+" "+Date();
+					}
+					
+					function Book4(){
+					var Adults= prompt("Number of Adult persons");
+					var Childs= prompt("Number of Childrens");
+					var AdultPrice=AdultTicket*Adults;
+					var ChildPrice=childTicket*Childs;
+
+					var Total=AdultPrice+ChildPrice;
+					document.getElementById('amount').innerHTML="Rs."+Total+".00";
+
+						document.getElementById('Mnameout').innerHTML=movieName[3];
+						document.getElementById('duration').innerHTML=movieDuration[3];
+						document.getElementById('genreeout').innerHTML="Adventure";
+						document.getElementById('cerificateOut').innerHTML="U/A";
+						document.getElementById('AdultOut').innerHTML=Adults;
+						document.getElementById('childOut').innerHTML=Childs;
+						var x = document.getElementById("movie4").selectedIndex;
+    					document.getElementById('STAD').innerHTML= document.getElementsByTagName("option")[x].value+","+" "+Date();
+					}
+
+					function Ticket(table){
+						var printContents = document.getElementById(table).innerHTML;
+			    		 var originalContents = document.body.innerHTML;
+
+			    		 document.body.innerHTML = printContents;
+
+			    		 window.print();
+
+			     		document.body.innerHTML = originalContents;
+
+					}
+			</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>toString</title>
+	<meta charset="utf-8">	
+</head>
+<body>
+	<h1>toString()</h1>
+	<p>Every object has a <b>toString()</b> method that is automatically called when the object is to be represented as a text value or when an object is referred to in a manner in which a string is expected. By default, the toString() method is inherited by every object descended from Object. If this method is not overridden in a custom object, toString() returns "[object type]", where type is the object type.</p>
+
+
+	<h1>let</h1>
+	<p><b>let</b> allows you to declare variables that are limited in scope to the block, statement, or expression on which it is used. This is unlike the var keyword, which defines a variable globally, or locally to an entire function regardless of block scope.</p>
+	
+	<script type="text/javascript">
+
+			// toString()
+
+			var arr = ["C", "C++", "Java", "WebTechnologies", "DBMS"];
+
+			var arr_con = arr.toString();
+			console.log(arr_con);
+
+			//this keyword
+
+			function reservations(name, classType, number){
+
+				this.name = name;
+				this.classType = classType;
+				this.number = number;
+
+			}
+
+			var reservation1 = new reservations("sai", "Ist class", 9565544445);
+			var reservation2 = new reservations("siva", "IInd class", 22222222);
+			var reservation3 = new reservations("nag", "IIIrd class", 999999999);
+
+			reservations.prototype.toString = function(){
+				return "name:"+this.name+" "+"classType:"+this.classType+" "+"number:"+this.number;
+			}
+
+			console.log(reservation1.toString());
+			console.log(reservation2.toString());
+			console.log(reservation3.toString());
+
+
+			var x = 10;
+
+			for(x=10; x<25;x++){
+				console.log(x);
+			}
+
+				//variable with var Keyword
+				function varfun(){
+					for (var z = 7 ;z<15;z++){
+						console.log("value of Z:"+z);
+					}
+					console.log("value of Z:"+z);
+				}varfun();
+
+				//here y calling outof the block it shows an erron in console format
+
+				function letfun(){
+					for (let y =1;y<5;y++){
+						console.log(y);
+					}console.log(y);
+				}	letfun();
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+	Enter the First number : <input type="text" id="first">
+	<input type="text" id="sec">
+	<button onclick="add()">Add</button>
+	<p id="length"></p>
+	<script>
+		function add(){
+			var x=document.getElementById('first').value;
+			var y= document.getElementById('sec').value;
+			var z = x.length+y.length;
+			if (x.length==y.length) {
+				alert("equal");
+				document.getElementById('length').innerHTML = "The Total lenth is "+ z;
+			}else
+			alert("not equal");
+			
+		}
+		
+	</script>
+</body>
+</html>
