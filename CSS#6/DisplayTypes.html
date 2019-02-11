@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DisplayTypes & Centering Types</title>
+</head>
+
+<style type="text/css">
+
+	body{
+		margin: 0;
+		padding: 0;
+	}
+
+	.main{
+		margin: 10px;
+		padding: 5px 5px 25px 5px;
+	}
+	.none li{
+		display: none;
+	}
+
+	.block li{
+		display: block;
+		background-color: grey;
+	}
+
+	.inline{
+		background-color: grey;
+	}
+
+	.inline li{
+		display: inline;
+		padding: 50px;
+	}
+
+	.inline li a{
+		padding: 10px;
+		color: black;
+		text-decoration: none;
+	}
+
+	.inline-block{
+
+		background-color: red;
+	
+	}
+	
+	.inline-block li{
+		display: inline-block;
+		background-color: green;
+		padding: 20px;
+	}
+
+	.img-inline li{
+		display: inline;
+		padding: 20px;
+
+	}
+
+	.img-inline-block li{
+		display: inline-block;
+		padding: 60px;
+	}
+
+	.div1{
+		display: block;
+		margin: auto;
+		text-align: center;
+		height: 100px;
+		width: 100px;
+		background-color: red;
+		
+	}
+
+	.div3{
+		display: inline-block;
+		text-align: center;
+	}
+	 
+</style>
+
+
+<body bgcolor="#dee1e5">
+<div class="main">
+	<div class="none">
+
+		<h1>Display:none</h1>
+			<ul>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+			</ul>
+		</div>
+ 	<hr>
+
+	<div class="block">
+		<h1>Display:block</h1>
+			
+			<li><a href="#">click</a></li><br>
+			<li><a href="#">click</a></li><br>
+			<li><a href="#">click</a></li><br>
+			<li><a href="#">click</a></li><br>
+			<li><a href="#">click</a></li><br>
+			<li><a href="#">click</a></li><br>
+			<li><a href="#">click</a></li>
+		
+		</div>
+	<hr>	
+<h1>Display:Inline</h1>
+	<div class="inline">
+		<ul>
+			<li><a href="#">click</a></li>
+			<li><a href="#">click</a></li>
+			<li><a href="#">click</a></li>
+			<li><a href="#">click</a></li>
+			<li><a href="#">click</a></li>
+			<li><a href="#">click</a></li>
+			<li><a href="#">click</a></li>
+		</ul>
+	</div>
+<br>
+<hr>
+	<h1>Display:inline-block</h1>
+		<div class="inline-block">
+			<ul>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+				<li><a href="#">click</a></li>
+			</ul>
+		</div>
+	<hr>
+
+	<div class="img-inline" align="center">
+		<li><img src="webs.png" height="150" width="150" style="border: 1px solid black" alt="Image"></li>
+		<li><img src="webss.png" height="150" width="150" style="border: 1px solid black" alt="Image"></li>
+		<li><img src="Team.jpg" height="150" width="150" style="border: 1px solid black" alt="Image"></li>
+		<li><img src="Team1.jpg" height="150" width="150" style="border: 1px solid black" alt="Image"></li>
+
+		<br>
+		<h3>Element < img> tag having the default inline property.</h3><br>
+
+		<h3>Inline elements
+		Tags that are inline by default include < span>, < a>, < em>, < img>, and < strong>.</h3>
+	</div><hr>
+
+	<div class="img-inline-block" align="center">
+		<li><img src="webs.png" height="150" width="150" style="border: 1px solid black" alt="Image"></li>
+		<li><img src="webss.png" height="150" width="150" style="border: 1px solid black" alt="Image"></li>
+		<li><img src="Team.jpg" height="150" width="150" style="border: 1px solid black" alt="Image"></li>
+		<li><img src="Team1.jpg" height="150" width="150" style="border: 1px solid black" alt="Image"></li>
+
+		<br>
+		<h3>Inline-block  
+		Same flow as an inline element but behave as a block element</h3><br>
+	</div>
+<hr><hr><hr>
+
+
+		
+	</div>
+</body>
+</html>

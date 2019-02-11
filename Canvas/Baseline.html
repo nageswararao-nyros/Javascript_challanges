@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Baseline</title>
+</head>
+<body bgcolor="pink">
+	<div>
+		<h1>textBaseline_top</h1>
+			<canvas id="Baseline_top" width="400" height="200" style="border: 1px solid black; background-color: grey;">
+			</canvas>
+	</div>
+
+	<div>
+		<h1>textBaseline_hang</h1>
+			<canvas id="Baseline_hang" width="400" height="200" style="border: 1px solid black; background-color: grey;">
+			</canvas>
+	</div>
+
+	<div>
+		<h1>textBaseline_bottom</h1>
+			<canvas id="Baseline_bottom" width="400" height="200" style="border: 1px solid black; background-color: grey;">
+			</canvas>
+	</div>
+
+	<div>
+		<h1>textBaseline_middle</h1>
+			<canvas id="Baseline_middle" width="400" height="200" style="border: 1px solid black; background-color: grey;">
+			</canvas>
+	</div>
+
+	<div>
+		<h1>textBaseline_alphabetic</h1>
+			<canvas id="Baseline_alphabetic" width="400" height="200" style="border: 1px solid black; background-color: grey;">
+			</canvas>
+	</div>
+
+	<div>
+		<h1>textBaseline_ideographic</h1>
+			<canvas id="Baseline_ideographic" width="400" height="200" style="border: 1px solid black; background-color: grey;">
+			</canvas>
+	</div>
+
+
+	<script type="text/javascript">
+		var canvas=document.getElementById('Baseline_top');
+		var context=canvas.getContext("2d");
+		context.moveTo(50,100);
+		context.lineTo(350,100);
+		context.stroke();
+		context.textBaseline="top";
+		context.fillStyle="black";
+		context.font="20px sans-serif"
+		context.fillText("Nyros",60,110);
+	</script>
+
+	<script type="text/javascript">
+		var canvas=document.getElementById('Baseline_bottom');
+		var context=canvas.getContext("2d");
+		context.moveTo(50,100);
+		context.lineTo(350,100);
+		context.stroke();
+		context.textBaseline="bottom";
+		context.fillStyle="black";
+		context.font="20px sans-serif"
+		context.fillText("Nyros",70,90);
+	</script>
+
+	<script type="text/javascript">
+		var canvas=document.getElementById('Baseline_hang');
+		var context=canvas.getContext("2d");
+		context.moveTo(50,100);
+		context.lineTo(350,100);
+		context.stroke();
+		context.textBaseline="hanging";
+		context.fillStyle="black";
+		context.font="20px sans-serif"
+		context.fillText("Nyros",300,100);
+	</script>
+
+
+	<script type="text/javascript">
+		var canvas=document.getElementById('Baseline_middle');
+		var context=canvas.getContext("2d");
+		context.moveTo(50,100);
+		context.lineTo(350,100);
+		context.stroke();
+		context.textBaseline="middle";
+		context.fillStyle="black";
+		context.font="20px sans-serif"
+		context.fillText("Nyros",90,100);
+	</script>
+
+
+	<script type="text/javascript">
+		var canvas=document.getElementById('Baseline_alphabetic');
+		var context=canvas.getContext("2d");
+		context.moveTo(50,100);
+		context.lineTo(350,100);
+		context.stroke();
+		context.textBaseline="alphabetic";
+		context.fillStyle="black";
+		context.font="20px sans-serif"
+		context.fillText("Nyros",90,100);
+	</script>
+
+	<script type="text/javascript">
+		var canvas=document.getElementById('Baseline_ideographic');
+		var context=canvas.getContext("2d");
+		context.moveTo(50,100);
+		context.lineTo(350,100);
+		context.stroke();
+		context.textBaseline="ideographic";
+		context.fillStyle="black";
+		context.font="20px sans-serif"
+		context.fillText("Nyros",90,100);
+	</script>
+
+</body>
+</html>

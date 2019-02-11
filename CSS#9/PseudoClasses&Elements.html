@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pseudo Classes and Elements</title>
+	<style type="text/css">
+		body{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			background-color: #d4d4aa;
+		}
+		.main{
+			width: 100%;
+		}
+		.sub{
+			padding: 20px;
+		}
+		h1{
+			background-color: black;
+			color: white;
+			text-indent: 30px;
+		}
+		.p-hover:hover{
+			background-color: black;
+			color: white;
+		}
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+		td, th {
+			border: 1px solid black;
+			text-align: left;
+			padding: 8px;
+		}
+		ul li{
+			display: inline-block;
+			padding: 10px;
+			list-style-type: none;
+		}
+		ul li a{
+			text-decoration: none;
+			font:2em bold sans-serif;
+		}
+		ul li a:hover{
+			background-color: black;
+			color: white;
+		}
+		ol li {
+			display: inline-block;
+		}
+
+		.visited li a:visited {
+			color:red;
+		}
+
+		div{
+			padding: 10px;
+		}
+		input[type=text]:active{
+			background-color: grey;
+			color: black;
+		}
+		.focus input[type=text]:focus{
+			background-color: #61dafb;
+		}
+		.first p:first-child{
+			background-color: pink;
+		}
+		.last p:last-child{
+			background-color: pink;
+		}
+		.only p:last-child{
+			background-color: #61dafb;
+		}
+		.nth p:nth-child(even){
+			background-color: blue;
+			color: white;
+		}
+		.nth p:nth-child(odd){
+			background-color: black;
+			color: white;
+		}
+		.nth-of-type p:nth-of-type(3){
+			color: white;
+			background-color: orange;
+		}
+		.nth-of-type h2:nth-of-type(2){
+			color: white;
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="sub">
+			<h1>Pseudo classes and Elements</h1>
+			<p class="p-hover">
+				CSS pseudo-classes are used to add special effects to some selectors. You do not need to use JavaScript or any other script to use those effects. 
+			</p>
+			<h2>
+				Below table shows values of pseudo classes
+			</h2>
+			<table>
+				<th>Value</th>
+				<th>Description</th>
+				<tr>
+					<td><a href="#">:link</a></td>
+					<td>Use this class to add special style to an unvisited link.</td>
+				</tr>
+				<tr>
+					<td><a href="#">:visited</a></td>
+					<td>Use this class to add special style to a visited link.</td>
+				</tr>
+				<tr>
+					<td><a href="#">:hover</a></td>
+					<td>Use this class to add special style to an element when you mouse over it.</td>
+				</tr>
+				<tr>
+					<td><a href="#">:active</a></td>
+					<td>Use this class to add special style to an active element.</td>
+				</tr>
+				<tr>
+					<td><a href="#">:focus</a></td>
+					<td>Use this class to add special style to an element while the element has focus.</td>
+				</tr>
+				<tr>
+					<td><a href="#">:first-child</a></td>
+					<td>Use this class to add special style to an element that is the first child of some other element.</td>
+				</tr>
+				<tr>
+					<td><a href="#">:lang</a></td>
+					<td>Use this class to specify a language to use in a specified element.</td>
+				</tr>
+			</table>
+			<hr>
+			<h3>Hover selector</h3>
+			<ul>
+				<li><a href="#">hover1</a></li>
+				<li><a href="#">hover2</a></li>
+				<li><a href="#">hover3</a></li>
+				<li><a href="#">hover4</a></li>
+				<li><a href="#">hover5</a></li>
+			</ul>
+			<hr>
+			<h3>Visited selector</h3>
+			<ol class="visited">
+				<li><a href="#">hover1</a></li>
+				<li><a href="#">hover2</a></li>
+				<li><a href="#">hover3</a></li>
+				<li><a href="#">hover4</a></li>
+				<li><a href="#">hover5</a></li>
+			</ol>
+			<hr>
+			<h3>Active selector</h3>
+			<div>FirstName:<input type="text" size="50"></div>
+			<div>LastName:<input type="text" size="50"></div>
+			<div>PhoneNum:<input type="text" size="50"></div>
+			<hr>
+			<h3>Focus selector</h3>
+			<div class="focus">FirstName:<input type="text"></div>
+			<div class="focus">LastName:<input type="text"></div>
+			<div class="focus">PhoneNum:<input type="text"></div>
+			<hr>
+			<h3>First-child selector</h3>
+			<div class="first">
+				<p>
+					The :first-child selector is used to select the specified selector, only if it is the first child of its parent.
+				</p>
+				<p>
+					<strong>Note:</strong> For :first-child to work in IE8 and earlier, a <!DOCTYPE> must be declared.
+				</p>
+			</div>
+			<hr>
+			<h3>Last-child selector</h3>
+			<div class="last">
+				<p>
+					The :last-child selector matches every element that is the last child of its parent.</p>
+					<p>
+						<strong>Tip:</strong> p:last-child is equal to p:nth-last-child(1).
+					</p>
+				</div>
+				<div class="only">
+					<p>
+						The :only-child selector matches every element that is the only child of its parent.
+					</p>
+					<p>
+						The :only-child selector matches every element that is the only child of its parent.
+					</p>
+				</div>
+				<hr>
+				<h3>nth-child()</h3>
+				<div class="nth">
+					<p>
+						The :nth-child() CSS pseudo-class matches elements based on their position in a group of siblings.
+					</p>
+					<p>
+						The nth-child pseudo-class is specified with a single argument, which represents the pattern for matching elements.
+					</p>
+					<p>
+						<strong>odd</strong>
+						Represents elements whose numeric position in a series of siblings is odd: 1, 3, 5, etc.
+					</p>
+					<p>
+						<strong>even</strong>
+						Represents elements whose numeric position in a series of siblings is even: 2, 4, 6, etc.
+					</p>
+				</div>
+				<hr>
+				<h3>nth-of-type()</h3>
+				<div class="nth-of-type">
+					<p>
+						The :nth-of-type() CSS pseudo-class matches elements of a given type, based on their position among a group of siblings.
+					</p>
+					<p>
+						The nth-of-type pseudo-class is specified with a single argument, which represents the pattern for matching elements.
+					</p>
+					<p>
+						<strong>See:</strong>nth-child for a more detailed explanation of its syntax.
+					</p>
+					<h2>nth-child for a more detailed explanation of its syntax.</h2>
+					<h2>nth-child for a more detailed explanation of its syntax.</h2>
+					<h2>nth-child for a more detailed explanation of its syntax.</h2>
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>

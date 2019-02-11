@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hello</title>
+</head>
+<body>
+
+<p>Enter some text in the fields below, then press the "Submit form" button to submit the form.</p>
+
+<form id="myForm">
+  First name: <input type="text" id="name" required><br>
+  Last name: <input type="text" id="Lastname" required><br>
+   Email: <input type="Email" id="Email" required><br>
+   Date: <input type="Date" id="date" required><br>
+    <input type="button" onclick="myHelp()" value="Submit form">
+</form>
+<div id="printableArea">
+<form>
+<table>
+	<tr>
+		<td>firstname</td>
+		<td id="First"></td>
+	</tr>
+	<tr>
+		<td>Lastname</td>
+		<td id="Last"></td>
+	</tr>
+	<tr>
+		<td>Email</td>
+		<td id="email"></td>
+	</tr>
+	<tr>
+		<td>Date of journey</td>
+		<td id="dated"></td>
+	</tr>
+</table>
+</form>
+</div>
+<input type="button" onclick="printDiv('printableArea')" value="print" />
+
+<script>
+function myHelp() {
+    var name=document.getElementById('name');
+    document.getElementById("First").innerHTML=name.value;
+    var Lname=document.getElementById('Lastname');
+    document.getElementById("Last").innerHTML=Lname.value;
+    var Email=document.getElementById('Email');
+    document.getElementById("email").innerHTML=Email.value;
+     var dates=document.getElementById('date');
+    document.getElementById("dated").innerHTML=dates.value;
+   }
+   function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+   
+</script>
+
+</body>
+</html>

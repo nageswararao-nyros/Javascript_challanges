@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Properties</title>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+			width: 100%;
+		}
+		.sub{
+			padding: 20px;
+		}
+		
+		.background{
+			background: url("light.jpg");
+			width: 100%;
+			height: 400px;
+			overflow: none;
+			}
+
+		body p,li{
+			padding: 0 15px;
+			font-size: 20px;
+			
+		}
+		.img img{
+			display: block;
+			width: 100%;
+			height: 300px;
+		}
+
+		.fixed img{
+			display: block;
+			width: 900px;
+			height: 300px;
+		}
+		.Replacement{
+			width: 350px;
+			height: 250px;
+			background:url("download.jpeg");
+		}
+
+		.text {
+			width: 350px; height: 75px;
+			background: url("Team.jpg");
+			text-indent:-9999px;
+		}
+
+		#home{
+			background:url("home.png");
+			width: 100px;
+			height: 100px;
+			background-repeat: no-repeat;
+		}
+
+	</style>
+</head>
+<body bgcolor="#d5dce8">
+<div class="main">
+	<div class="sub">
+		<h1>Image use</h1>		
+		<img src="light.jpg" height="250" width="100%" alt="Image">
+		<p>Images play an important role in any webpage. Though it is not recommended to include a lot of images, but it is still important to use good images wherever required.CSS plays a good role to control image display. You can set the following image properties using CSS.</p>
+		<hr>
+		<section class="background">
+			<h1>Layout elements should be defined as background images</h1>
+
+				<p>
+
+					<strong>Example:</strong>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+					<h3>Why do we use it?</h3>
+					<p>
+					<strong>Example:</strong>
+					It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+				</section>
+				<hr>
+				<h1>Image cropping</h1>
+				<img src="webs.png" width="500" height="300" style="border: 1px solid black" alt="Image">
+				<img src="Team.jpg" width="400" height="300" style="border: 1px solid black" alt="Image">
+				<h3 align="center">Both images cropped with height and width</h3>
+				<hr>
+
+				<h1>Some background images are fitted with the following properties</h1>
+				<p> One trick was to resort to using a background image instead to go around the issue. Well the problem is no more with the <strong>object-fit</strong> property!.</p><br>
+				<ul>
+					<li><strong>contain:</strong> The image keeps its original aspect ratio, but resized so that the longest of either the height or width can fit in the given dimensions.</li>
+					<li><strong>cover:</strong> The image keeps its original aspect ratio and the image area is completely covered.</li>
+					<li><strong>fill:</strong> The initial value. The image will fill its given area, even if it means losing its aspect ratio.</li>
+					<li><strong>none:</strong> The image is not resized at all, and the original image size fills the given area.</li>
+					<li><strong>scale-down:</strong> The smaller of either contain or none.</li>
+				</ul><hr>
+				<div class="img">
+					<h1>All below images are very wide image with a width of 100%</h1>
+					<img src="webs.png" alt="Image" style="border: 1px solid black"><br>
+					<img src="webss.png" alt="Image" style="border: 1px solid black"><br>
+				</div>
+				<div class="fixed">
+					<h3>Fixed layouts use exact pixel widths which means that the size of the page components will be the same for all resolutions.</h3>
+					<img src="work.jpg" alt="Image" style="border: 1px solid black"><br>
+					<img src="new.jpg" alt="Image" style="border: 1px solid black"><br>
+				</div>
+				<h3>Use the CSS property max-width to create boundaries for a fluid page. <br></h3>
+				<h4>By setting a percentage width and a fixed pixel max-width, the content wrapper will always be relative to the screen size, until it reaches the maximum size, 800px in this example, to keep the content wrapper from extending beyond that.</h4>
+			</div><hr>
+				<h1>Image Replacement without text indent</h1>
+
+				<h1 class="Replacement">
+					Logo
+				</h1>
+
+				<h1>Image Replacement with text-indent</h1>
+				<h1 class="text" align="center">
+					Image replacement with text-indent
+				</h1>
+				<hr>
+				<h1>Sprites</h1>
+			<h3>
+				<h4>Issues with swapping background images: </h4> 
+						<li>Adds an extra HTTP request </li>
+						<li>Image is not preloaded</li>
+				<h4>Advantages to the sprite approach: </h4>
+						<li>Reduces number of HTTP image requests </li>
+						<li>Removes loading fash / need for preload</li>
+				<h4>xbase64 encoding: </li> 
+						<li>Directly embed images into your CSS</li> 
+						<li>IE8+</li>
+			</h3>
+			<a href="#"><img src="home.png" height="100" width="100" class="imgs"></a>
+			<a href="#"><img src="android.png" height="100" width="100" class="imgs"></a>
+	</div>
+</div>
+</body>
+</html>

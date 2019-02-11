@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS</title>
+			<style type="text/css">
+
+				body{
+					background:url("back.png");
+					background-repeat: cover;
+					font-family: sans-serif;
+				}
+				#container{
+					background-color: #d6d6c2;
+					position: relative;
+					width:1200px;
+					height: 300px;
+					top: 2%;
+					left: 3%;
+					right: 5s%;
+					border-radius: 5px;
+					}
+
+				#container #btn{
+					position: absolute;
+					left: 4%;
+					}
+
+				h1{
+					color: black;
+					}
+
+				strong{
+					
+					font-size: 20px;
+					
+					}
+
+				#btn-css-default{
+
+					background-color: green;
+					color: white;
+					padding:10px;
+					width: 90px;
+					top: 2%;
+					left: 5%;
+					}
+
+				#btn-css-style{
+					background-color:#61dafb;
+					padding: 10px;
+					width: 90px;
+					outline: none; 
+					top: 2%;
+					left: 5%;
+					border-radius: 10px;
+					border: none;
+					}
+				#btn-css-hover{
+					background-color: #ffbb33;
+					padding: 10px;
+					width: 90px;
+					outline: none; 
+					top: 2%;
+					left: 5%;
+					border-radius: 10px;
+					border: none;
+					}
+				#btn-css-hover:hover{
+					background-color: #4d88ff;
+					cursor: pointer;
+					color: white;
+				}
+				/*Buttons end here*/
+
+				#text{
+					background-color: #d6d6c2;
+					position: relative;
+					width:1200px;
+					height: 300px;
+					top: 2%;
+					left: 3%;
+					right: 5s%;
+					border-radius: 5px;
+
+				}
+				#text #text-p{
+					position: absolute;
+					left: 15px;
+					top: 5px;
+					font-size: 25px;
+				}
+
+				#text-ul strong{
+					color: red;
+				}
+
+				#text-p{
+					background-color: grey;
+				}
+
+				#text-ul{
+					background-color: #d6d6c2;
+					position: relative;
+					width:1200px;
+					height: 520px;
+					top: 2%;
+					left: 3%;
+					right: 5s%;
+					border-radius: 5px;
+				}
+
+				#text-ul ul{
+					position: center;
+					left: 15px;
+					top: 5px;
+					right: 5px;
+					font-size: 20px;
+
+				}
+
+				#text-ul li strong{
+					color: #000099;
+				}
+
+
+			</style>
+	
+	</head><!--head end here-->
+	<!--body-->
+	<body>
+		<div id="container">
+			<h1 align="center">CSS Buttons</h1>
+				<div id="btn">
+					<input type="button" value="default"><strong>  Default HTML button</strong> <br><br>
+					<button type="button" id="btn-css-default">css1</button><strong>  Default CSS button</strong> <br><br>
+					<button type="button" id="btn-css-style">css1</button><strong> CSS button with curve shape</strong> <br><br>
+					<button type="button" id="btn-css-hover">css1</button><strong> CSS button with curve shape-Hover effect</strong> <br><br>
+				</div><!--Buttons end here-->
+		</div><br>
+
+				<!--Text properties-->
+				<div id="text">
+					<p id="text-p">
+						Cascading Style Sheets, fondly referred to as CSS, is a simple design language intended to simplify the process of making web pages presentable.
+
+						CSS handles the look and feel part of a web page. Using CSS, you can control the color of the text, the style of fonts, the spacing between paragraphs, how columns are sized and laid out, what background images or colors are used, layout designs,variations in display for different devices and screen sizes as well as a variety of other effects.
+
+						<mark>CSS is easy to learn and understand but it provides powerful control over the presentation of an HTML document. Most commonly, CSS is combined with the markup languages HTML or XHTML.</mark>
+					</p></div><br>
+					<div id="text-ul">
+						<p id="text-pp">
+							<strong>Advantages of CSS:</strong>
+							<ul>
+								<li>
+								<strong>CSS saves time</strong> − You can write CSS once and then reuse same sheet in multiple HTML pages. You can define a style for each HTML element and apply it to as many Web pages as you want.</li>
+								<li>
+
+								<strong>Pages load faster</strong> − If you are using CSS, you do not need to write HTML tag attributes every time. Just write one CSS rule of a tag and apply it to all the occurrences of that tag. So less code means faster download times.</li>
+								<li>
+								<strong>Easy maintenance</strong> − To make a global change, simply change the style, and all elements in all the web pages will be updated automatically.</li>
+								<li>
+								<strong>Superior styles to HTML</strong> − CSS has a much wider array of attributes than HTML, so you can give a far better look to your HTML page in comparison to HTML attributes.</li>
+								<li>
+								<strong>Multiple Device Compatibility</strong> − Style sheets allow content to be optimized for more than one type of device. By using the same HTML document, different versions of a website can be presented for handheld devices such as PDAs and cell phones or for printing.</li>
+								<li>
+								<strong>Global web standards</strong> − Now HTML attributes are being deprecated and it is being recommended to use CSS. So its a good idea to start using CSS in all the HTML pages to make them compatible to future browsers.</li>
+								<li>
+								<strong>Offline Browsing</strong> − CSS can store web applications locally with the help of an offline catche.Using of this, we can view offline websites.The cache also ensures faster loading and better overall performance of the website.</li>
+								<li>
+								<strong>Platform Independence</strong> − The Script offer consistent platform independence and can support latest browsers as well.</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+		
+
+	</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Canvas text</title>
+	</head>
+		<body bgcolor="#61dafb">
+	<div align="start">
+		<h1>textAlign=start</h1>
+			<canvas id="canvas_start" height="300" width="200" style="border: 1px solid black; background-color:grey;"></canvas>
+	</div>
+
+	<div align="end">
+		<h1>textAlign=end</h1>
+			<canvas id="canvas_end" height="300" width="200" style="border: 1px solid black; background-color:grey;">
+			</canvas>
+	</div>
+
+	<div align="left">
+		<h1>textAlign=left</h1>
+			<canvas id="canvas_left" height="300" width="200" style="border: 1px solid black; background-color:grey;">
+			</canvas>
+	</div>
+
+	<div align="Right">
+		<h1>textAlign_right</h1>
+			<canvas id="canvas_right" height="300" width="200" style="border: 1px solid black; background-color:grey;">
+			</canvas>
+	</div>
+
+
+	<div align="center">
+		<h1>textAlign_center</h1>
+			<canvas id="canvas_center" height="300" width="200" style="border: 1px solid black; background-color:grey;">
+			</canvas>
+	</div>
+
+
+
+	<script type="text/javascript">
+		var canvas=document.getElementById('canvas_start');
+		var context=canvas.getContext("2d");
+		context.font="20px sans-serif";
+		context.moveTo(100,20);
+		context.lineTo(100,280);
+		context.stroke();
+		context.textAlign="start";
+		context.fillStyle="red";
+		context.fillText("Nyros",100,100);
+	</script>
+
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas_end")
+		var context=canvas.getContext("2d");
+		context.font="20px sans-serif";
+		context.moveTo(100,20);
+		context.lineTo(100,280);
+		context.stroke();
+		context.textAlign="end";
+		context.fillStyle="red";
+		context. fillText("Nyros",100,100);
+	</script>
+
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas_left")
+		var context=canvas.getContext("2d");
+		context.font="20px sans-serif";
+		context.moveTo(100,20);
+		context.lineTo(100,280);
+		context.stroke();
+		context.textAlign="left";
+		context.fillStyle="red";
+		context. fillText("Nyros",100,100);
+	</script>
+
+
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas_right")
+		var context=canvas.getContext("2d");
+		context.font="20px sans-serif";
+		context.moveTo(100,20);
+		context.lineTo(100,280);
+		context.stroke();
+		context.textAlign="right";
+		context.fillStyle="red";
+		context. fillText("Nyros",100,100);
+	</script>
+
+
+	<script type="text/javascript">
+		var canvas=document.getElementById("canvas_center")
+		var context=canvas.getContext("2d");
+		context.font="20px sans-serif";
+		context.moveTo(100,20);
+		context.lineTo(100,280);
+		context.stroke();
+		context.textAlign="center";
+		context.fillStyle="red";
+		context. fillText("Nyros",100,100);
+	</script>
+		</body>
+</html>

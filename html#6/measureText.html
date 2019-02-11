@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+		<body>
+			<div id="measure">
+				<canvas id="measureText" width="300" height="300" style="border: 1px solid black" >
+					
+				</canvas>
+			</div>
+			<script type="text/javascript">
+				var canvas=document.getElementById('measureText');
+				var context=canvas.getContext("2d");
+				context.font="20px sans-serif";
+				var txt="AIMS College of Engineering";
+				context.fillText("width:"+context.measureText(txt).width,50,60);
+				context.fillText(txt,20,100);
+				context.stroke();
+
+			</script>
+		</body>
+</html>

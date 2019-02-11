@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Collapsing margins</title>
+			<style type="text/css">
+				.p1{
+					margin: 30px 10px 40px 10px;
+				}
+				.p2{
+					margin: 20px 10px 20px 10px;
+				}
+				.p3{
+					margin: 20px 10px 20px 10px;
+				}
+				.p4{
+					margin: 20px 10px 20px 10px;
+				}
+				.images{
+					margin: 50px;
+				}
+				.img1{
+					margin: 30px;
+				}
+				.img2{
+					margin: 30px;
+				}
+				.img3{
+					margin: 30px;
+				}
+				button{
+					width: 150px;
+					height: 50px;
+					background-color: red;
+					color: white;
+					border-radius:5px;
+					outline: none;
+					border: none;
+				}
+			</style>
+	</head>
+	<body bgcolor="#dee1e5">
+		<h1>Collapsing Margins</h1>
+			<p>
+				“In this specification, the expression collapsing margins means that adjoining margins (no non-empty content, padding, or border areas, or clearance separate them) of two or more boxes (which may be next to one another or nested) combine to form a single margin.”
+			</p>
+			<h1>Default value of margin is 16px</h1>
+			<hr>
+
+			<h1>Collapsing rules</h1>
+			<p>
+				There are other situations where elements do not have their margins collapsed:
+					<ul>
+					<li>floated elements</li>
+					<li>absolutely positioned elements</li>
+					<li>inline-block elements</li>
+					<li>elements with overflow set to anything other than visible (They do not collapse margins with their children.)</li>
+					<li>cleared elements (They do not collapse their top margins with their parent block’s bottom margin.)</li>
+					<li>the root element</li></ul>
+			</p>
+			<hr>
+			<h1>Collapsing elements</h1>
+
+			<p class="p1">
+				Margins collapse between adjacent elements. In simple terms, this means that for adjacent vertical block-level elements in the normal document flow, only the margin of the element with the largest margin value will be honored, while the margin of the element with the smaller margin value will be collapsed to zero.
+			
+			<p class="p2">
+				There is one situation that will cause a slight deviation from the behavior of collapsing margins: should one of the elements have a negative top or bottom margin, the positive and negative margins will be added together to reach the final, true margin.
+			</p>
+			<p class="p3">
+				There is one situation that will cause a slight deviation from the behavior of collapsing margins: should one of the elements have a negative top or bottom margin, the positive and negative margins will be added together to reach the final, true margin.
+			</p>
+			<p class="p4">
+				There is one situation that will cause a slight deviation from the behavior of collapsing margins: should one of the elements have a negative top or bottom margin, the positive and negative margins will be added together to reach the final, true margin.
+			</p>
+			</p>
+			<hr>
+			<button type="submit">submit</button>
+		</body>
+</html>

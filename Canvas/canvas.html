@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="canvas_blk">
+<h1>moveTo()</h1>
+<canvas id="moveTo" height="300" width="400" style="border: 2px solid black"></canvas>
+<canvas id="moveTo1" height="300" width="400" style="border: 2px solid black"></canvas>
+</div>
+
+<div class="canvas_blk">
+<h1>lineTo()</h1>
+<canvas id="lineTo" height="300" width="400" style="border: 2px solid black"></canvas>
+<canvas id="lineTo1" height="300" width="400" style="border: 2px solid black"></canvas>
+</div>
+		
+<div class="canvas_blk">
+<h1>Closepath()</h1>
+<canvas id="closePath" width="300" height="150" style="border:1px solid #d3d3d3;"></canvas>
+</div>
+
+
+<div class="canvas_blk">
+<h1>withoutClip()</h1>
+<canvas id="clipm" width="300" height="150" style="border:1px solid #d3d3d3;"></canvas>
+</div>
+
+
+<div class="canvas_blk">
+<h1>Rect() &amp; Clip()</h1>
+<canvas id="clip" width="300" height="150" style="border:1px solid #d3d3d3;"></canvas>
+
+
+</div>
+
+<div class="canvas_blk">
+<h1>ClosePath()</h1>
+<canvas id="myCanvass" height="300" width="400" style="border: 2px solid black"></canvas>
+</div>
+
+<div class="canvas_b">
+<h1>arc()</h1>
+<canvas id="arc" height="300" width="400" style="border: 2px solid black"></canvas>
+</div>
+
+<div class="canvas">
+<h1>Quadratic</h1>
+<canvas id="quadratic" height="300" width="400" style="border: 2px solid black"></canvas>
+</div>
+
+<div class="canvas_blk">
+<h1>bezierCurveTo</h1>
+<canvas id="bezier" height="300" width="400" style="border: 2px solid black"></canvas>
+</div>
+
+<script type="text/javascript">
+	var canvas=document.getElementById('moveTo');
+	var context=canvas.getContext('2d');
+	context.moveTo(50,50);
+	context.lineTo(50,150);
+	context.lineTo(150,150);
+	context.lineTo(150,50);
+	context.closePath();
+	context.fillStyle="red";
+	context.fill();
+	context.stroke();
+		</script>
+
+<script type="text/javascript">
+	var canvas=document.getElementById('moveTo1');
+	var context=canvas.getContext('2d');
+	context.moveTo(350,250);
+	context.lineTo(200,200);
+	context.lineTo(350,200);
+	
+	context.closePath();
+	context.fillStyle="red";
+	context.fill();
+	context.stroke();
+</script>
+
+
+<script type="text/javascript">
+	var canvas=document.getElementById('lineTo');
+	var context=canvas.getContext('2d');
+	context.moveTo(0,0);
+	context.lineTo(400,300);
+	context.stroke();
+		</script>
+
+<script type="text/javascript">
+	var canvas=document.getElementById('lineTo1');
+	var context=canvas.getContext('2d');
+	context.moveTo(0,0);
+	context.lineTo(300,300);
+	context.stroke();
+</script>
+
+
+<script>
+
+var c = document.getElementById("closePath");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(20, 20);
+ctx.lineTo(20, 100);
+ctx.lineTo(60, 120);
+ctx.lineTo(60, 20);
+ctx.lineTo(150,120);
+ctx.closePath();
+ctx.stroke();
+ctx.fillStyle="red";
+ctx.fill();
+
+</script>
+
+<script type="text/javascript">
+	var clip=document.getElementById('clip');
+	var set=clip.getContext("2d");
+	set.rect(50,30, 200, 100);
+	set.stroke();
+	set.clip();
+	set.fillStyle="#61dafb";
+	set.fillRect(0, 0, 180, 90);
+</script>
+
+<script type="text/javascript">
+var clip=document.getElementById('clipm');
+var set=clip.getContext("2d");
+set.rect(50,30, 200, 100);
+set.stroke();
+set.fillStyle="#61dafb";
+set.fillRect(0, 0, 180, 90);
+</script>
+
+<script type="text/javascript">
+var canvas=document.getElementById('myCanvass');
+var context=canvas.getContext('2d');
+context.moveTo(100,120);
+context.lineTo(310,120);
+context.lineTo(140,250);
+context.lineTo(200,40);
+context.lineTo(280,250);
+context.closePath();
+context.stroke();
+context.fillStyle="red";
+context.fill();
+</script>
+
+<script type="text/javascript">
+	var canvas=document.getElementById("arc");
+	var context=canvas.getContext("2d");
+	context.beginPath();
+	context.arc(200, 150, 40, 0, 2 * Math.PI);
+	context.stroke();
+	context.fillStyle="blue";
+	context.fill();
+</script>
+
+<script type="text/javascript">
+	var canvas=document.getElementById("quadratic");
+	var context=canvas.getContext("2d");
+	context.beginPath();
+	context.moveTo(100,150);
+	context.quadraticCurveTo(100, 250, 300, 100 );
+	context.stroke();
+</script>
+<script type="text/javascript">
+	var canvas=document.getElementById("bezier");
+	var context=canvas.getContext('2d');
+	context.beginPath();
+	context.moveTo(50, 50);
+	context.bezierCurveTo(120,300,200,100,200,20);
+	context.stroke();
+
+</script>
+
+
+
+
+</body>
+</html>
